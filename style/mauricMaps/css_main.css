@@ -1,0 +1,535 @@
+html {
+overflow-y:scroll;
+}
+
+html,body { 
+margin:0;
+padding:0;
+background:#fff;
+}
+
+div.dhr{
+display:block;
+float:left;
+width:730px;
+height:1px;
+border-bottom:#e3e3e3 solid 1px;
+margin:10px 0 10px 0;
+}
+
+h1 {
+font-family:Optima, Verdana;
+font-size:16px;
+font-weight:normal;
+padding:0;
+margin:12px 0 0 0;
+color:#872929;
+}
+
+h3 {
+font-family:Optima, Verdana;
+font-size:12px;
+font-weight:normal;
+color:#872929;
+padding:0 0 5px 0;
+margin:0;
+}
+
+#shadow {
+display:none;
+}
+
+#more {
+padding:30px 0 0 0;
+}
+
+#show_more-old:hover {
+color:#ff0000;
+}
+
+#show_more-old {
+font-family:Verdana;
+font-size:14px;
+font-weight:normal;
+color:#036;
+text-decoration:underline;
+text-align:center;
+outline:none;
+border:none;
+}
+
+#show_more:hover{
+color:#eee;
+}
+
+#show_more{
+font-family:Verdana;
+font-size:12px;
+color:#fff;
+/*display:block;
+float:right;
+width:auto;
+height:auto;*/
+/*border:#666 solid 1px;*/
+padding:7px 17px 7px 17px;
+background: #317ac4;
+background: -moz-linear-gradient(top,  #317ac4 0%, #356aa0 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#317ac4), color-stop(100%,#356aa0));
+background: -webkit-linear-gradient(top,  #317ac4 0%,#356aa0 100%);
+background: -o-linear-gradient(top,  #317ac4 0%,#356aa0 100%);
+background: -ms-linear-gradient(top,  #317ac4 0%,#356aa0 100%);
+background: linear-gradient(to bottom,  #317ac4 0%,#356aa0 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#317ac4', endColorstr='#356aa0',GradientType=0 );
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+border-top:#78c4e0 1px solid;
+-moz-text-shadow:#333 0 -1px 1px;
+-webkit-text-shadow:#333 0 -1px 1px;
+text-shadow:#333 0 -1px 1px;
+-moz-box-shadow:0 0 2px #020202;
+-webkit-box-shadow:0 0 2px #020202;
+box-shadow:0 0 2px #020202;
+text-decoration:none;
+}
+
+
+#map {
+display:none;
+float:left;
+width:98%;
+height:800px;
+padding:0;
+margin:1px 1% 0 1%;
+}
+
+a.button-link:hover {
+color:#ff0000;
+}
+
+a.button-link {
+position:relative;
+font-family:Verdana;
+font-size:16px;
+font-weight:normal;
+color:#036;
+top:-12px;
+display:block;
+float:left;
+margin:0 0 0 10px;
+padding:25px 0 25px 52px;
+outline:none;
+text-decoration:underline;
+}
+
+a#view-map{
+display:block;
+background:url(../../img/mauricMaps/map.png) no-repeat left center;
+}
+
+a#view-list{
+display:none;
+background:url(../../img/mauricMaps/list.png) no-repeat left center;
+}
+
+a#view-cross{
+display:block;
+background:url(../../img/mauricMaps/cross.png) no-repeat left center;
+}
+
+a.header-link:hover {
+color:#ff0000;
+border-bottom:#ff0000 dashed 1px;
+}
+
+a.header-link {
+font-family:Verdana;
+font-size:12px;
+font-weight:normal;
+color:#036;
+display:block;
+float:left;
+margin:15px 0 0 40px;
+padding:0 0 1px 0;
+outline:none;
+border-bottom:#036 dashed 1px;
+text-decoration:none;
+}
+
+div#header {
+display:block;
+float:left;
+width:100%;
+height:auto;
+padding:0;
+margin:5px 0 0 0;
+}
+
+div#nav {
+display:block;
+float:left;
+width:100%;
+height:auto;
+padding:0;
+margin:0;
+}
+
+div#tr-table {
+display:block;
+float:left;
+width:auto;
+height:auto;
+padding:0;
+margin:0 0 0 0;
+}
+
+div#content-table {
+display:block;
+float:left;
+width:auto;
+height:auto;
+padding:0;
+margin:0 0 0 0;
+}
+
+div#cross {
+display:none;
+float:left;
+width:auto;
+height:auto;
+padding:0;
+margin:0 0 0 0;
+}
+
+div#total {
+display:block;
+float:left;
+width:auto;
+height:auto;
+padding:0 0 10px 0;
+margin:10px 0 0 0;
+}
+
+
+div.content-line {
+display:block;
+float:left;
+width:1000px;
+padding:2px 0 4px 0;
+/*border-bottom:#f5f5f5 dashed 1px;*/
+}
+
+span.line-street {
+font-family:Verdana;
+font-size:12px;
+color:#000;
+margin:0 0 0 10px;
+}
+
+span.line-home {
+font-family:Verdana;
+font-size:12px;
+color:#222;
+}
+
+span.line-sector {
+font-family:Verdana;
+font-size:10px;
+color:#888;
+margin:0 0 0 10px;
+}
+
+span.line-postindex {
+font-family:Verdana;
+font-size:10px;
+color:#aaa;
+margin:0 0 0 10px;
+}
+
+
+span.line-service {
+font-family:Verdana;
+font-size:12px;
+color:#000;
+}
+
+span.line-date {
+font-family:Verdana;
+font-size:12px;
+color:#000;
+}
+
+span.ln-value {
+font-family:Verdana;
+font-size:10px;
+color:#872929;
+}
+
+span.ln-var {
+font-family:Verdana;
+font-size:10px;
+color:#333;
+}
+
+span.ln-cap {
+font-family:Verdana;
+font-size:14px;
+color:#872929;
+}
+
+
+span.ln-col {
+font-family:Verdana;
+font-size:14px;
+color:#111;
+}
+
+
+h4 {
+font-family:Verdana;
+font-size:14px;
+font-weight:normal;
+color:#872929;
+}
+
+div.toup {
+position:relative;
+top:-10px;
+left:10px;
+width:20px;
+height:10px;
+background:url(../../img/mauricMaps/toup.png) no-repeat 0 0;
+}
+
+a.link-line:hover {
+color:#ff0000;
+border-bottom:#ff0000 dashed 1px;
+}
+
+a.link-line {
+font-family:Verdana;
+font-size:12px;
+font-weight:normal;
+color:#036;
+padding:0 0 2px 0;
+margin:0 0 2px 10px;
+text-decoration:none;
+border-bottom:#036 dashed 1px;
+outline:none;
+}
+
+div.comment-line {
+display:block;
+float:left;
+width:auto;
+height:auto;
+clear:both;
+}
+
+div.comment-wrap {
+display:none;
+float:left;
+clear:both;
+width:750px;
+height:auto;
+padding:0 0 10px 20px;
+margin:10px 0 10px 10px;
+border:#999 solid 1px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+-moz-box-shadow:1px 1px 2px #999;
+-webkit-box-shadow:1px 1px 2px #999;
+box-shadow:1px 1px 2px #999;
+}
+
+a#logo {
+display:block;
+float:left;
+width:200px;
+height:50px;
+padding:0;
+margin:0;
+background:url(../../img/mauricMaps/mauric_logo.png) no-repeat left top;  
+text-decoration:none;
+border:none;
+outline:none;
+}
+
+div.col {
+display:block;
+float:left;
+width:90%;
+height:auto;
+margin:0 5% 0 5%;
+padding:0 0 10px 0;
+}
+
+div.col select {
+width:100%;
+/*height:140px;*/
+margin:0;
+padding:0 0 0 0;
+}
+
+a.link-caption:hover {
+color:#ff0000;
+}
+
+a.link-caption {
+font-family:Verdana;
+font-size:14px;
+color:#872929;
+display:block;
+float:left;
+clear:both;
+padding:0 0 2px 0;
+margin:0;
+text-decoration:none;
+outline:none;
+border:none;
+}
+
+div.comment-line-buttons {
+display:block;
+float:left;
+width:600px;
+margin:0 0 10px 0;
+}
+
+div.comment-line-footer {
+display:block;
+float:left;
+clear:both;
+width:600px;
+margin:0 0 10px 0;
+}
+
+
+a.comment-info-active {
+color:#f5f5f5;
+background: #474747;
+background: -moz-linear-gradient(top,  #474747 0%, #919191 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(100%,#919191));
+background: -webkit-linear-gradient(top,  #474747 0%,#919191 100%);
+background: -o-linear-gradient(top,  #474747 0%,#919191 100%);
+background: -ms-linear-gradient(top,  #474747 0%,#919191 100%);
+background: linear-gradient(to bottom,  #474747 0%,#919191 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474747', endColorstr='#919191',GradientType=0 );
+-moz-border-radius: 5px 0 0 5px;
+-webkit-border-radius: 5px 0 0 5px;
+border-radius: 5px 0 0 5px;
+border:#999 solid 1px;
+}
+
+a.comment-counters-active {
+color:#f5f5f5;
+background: #474747;
+background: -moz-linear-gradient(top,  #474747 0%, #919191 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(100%,#919191));
+background: -webkit-linear-gradient(top,  #474747 0%,#919191 100%);
+background: -o-linear-gradient(top,  #474747 0%,#919191 100%);
+background: -ms-linear-gradient(top,  #474747 0%,#919191 100%);
+background: linear-gradient(to bottom,  #474747 0%,#919191 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474747', endColorstr='#919191',GradientType=0 );
+-moz-border-radius: 0 5px 5px 0;
+-webkit-border-radius: 0 5px 5px 0;
+border-radius: 0 5px 5px 0;
+border-top:#999 solid 1px;
+border-right:#999 solid 1px;
+border-bottom:#999 solid 1px;
+}
+
+a.comment-info-disable {
+color:#111;
+background: #ffffff;
+background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5));
+background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%);
+background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%);
+background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%);
+background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+-moz-border-radius: 5px 0 0 5px;
+-webkit-border-radius: 5px 0 0 5px;
+border-radius: 5px 0 0 5px;
+border:#999 solid 1px;
+}
+
+
+a.comment-counters-disable {
+color:#111;
+background: #ffffff;
+background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5));
+background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%);
+background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%);
+background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%);
+background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+-moz-border-radius: 0 5px 5px 0;
+-webkit-border-radius: 0 5px 5px 0;
+border-radius: 0 5px 5px 0;
+-moz-text-shadow:#f9f9f9 0 1px 1px;
+-webkit-text-shadow:#f9f9f9 0 1px 1px;
+text-shadow:#f9f9f9 0 1px 1px;
+border-top:#999 solid 1px;
+border-right:#999 solid 1px;
+border-bottom:#999 solid 1px;
+}
+
+div.comment-line-counters {
+display:none;
+}
+
+a.comment-button {
+font-family:Verdana;
+font-size:12px;
+display:block;
+float:left;
+clear:none;
+padding:5px 10px 5px 10px;
+text-decoration:none;
+outline:none;
+}
+
+div#footer {
+display:block;
+float:left;
+width:1000px;
+height:auto;  
+padding:20px 0 10px 0;
+margin:10px 0 0 0;
+}
+
+div#copyright {
+font-family:Verdana;
+font-size:10px;
+color:#666;
+display:block;
+float:right;
+padding:0;
+margin:0 5px 0 0;
+}
+
+div#copyright a{
+font-family:Verdana;
+font-size:10px;
+color:#872929;
+text-decoration:none;
+outline:none;
+border:none;
+}
+
+div#share {
+font-family:Verdana;
+font-size:12px;
+color:#666;
+display:block;
+float:left;
+width:250px;
+height:auto;
+margin:0 0 0 360px;
+}
+
+
