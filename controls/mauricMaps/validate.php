@@ -8,14 +8,16 @@ function row(&$r) {
 					"COUNTAPARTMENT","GODPOSTR","COORDINATE") 
 				as $key) { 
 		if (!isset($r->$key)) { $r->$key=""; }
-		$r->$key=trim(iconv("cp1251","UTF-8",$r->$key));
+		$r->$key=trim(mb_convert_encoding($r->$key,"UTF-8","cp1251"));
+		//$r->$key=trim(iconv("cp1251","UTF-8",$r->$key));
 		if ($r->$key=="") { $r->$key="-"; } 
 	}
 }
 
 function total(&$r) {
 	foreach (array("SUM_SALL","SUM_RESIDENT","SUM_COUNTAPARTMENT","COUNT_BUILDINGS") as $key) { 
-		$r->$key=floatval(trim(iconv("cp1251","UTF-8",$r->$key)));
+		$r->$key=floatval(trim(mb_convert_encoding($r->$key,"UTF-8","cp1251")));
+		//$r->$key=floatval(trim(iconv("cp1251","UTF-8",$r->$key)));
 		if ($r->$key=="") { $r->$key="0"; } 
 	}
 }
@@ -23,14 +25,16 @@ function total(&$r) {
 
 function cross(&$r) {
 	foreach (array("ISP","COUNT_ISP") as $key) { 
-		$r->$key=trim(iconv("cp1251","UTF-8",$r->$key));
+		$r->$key=trim(mb_convert_encoding($r->$key,"UTF-8","cp1251"));
+		//$r->$key=trim(iconv("cp1251","UTF-8",$r->$key));
 		if ($r->$key=="") { $r->$key="-"; } 
 	}
 }
 
 
 function toWin($s) { 
-	return iconv("UTF-8","cp1251",$s);
+        return mb_convert_encoding($s,"cp1251","UTF-8");
+	//return iconv("UTF-8","cp1251",$s);
 }
 
 function click(&$s) {
@@ -110,13 +114,15 @@ function skipForSql(&$id) {
 }
 
 function strForList($s) { 
-	$s=iconv("cp1251","UTF-8",$s);
+        $s = mb_convert_encoding($s,"UTF-8","cp1251");
+	//$s=iconv("cp1251","UTF-8",$s);
 	return $s;
 }
 
 function searchForSql(&$s) { $rt=false;
 	if (($s!="") && ($s!="Поиск по всем товарам...")) {
-		$s=iconv("UTF-8","cp1251",$s);
+		$s = mb_convert_encoding($s,"cp1251","UTF-8");
+		//$s=iconv("UTF-8","cp1251",$s);
 		$rt=true;
 	} else {
 		$rt=false;
@@ -154,7 +160,8 @@ function urlPresence(&$pr) {
 }
 
 function baseStr(&$s) {
-	$s=strval(trim(iconv("cp1251","UTF-8",$s)));	
+	$s = mb_convert_encoding($s,"UTF-8","cp1251");
+	//$s=strval(trim(iconv("cp1251","UTF-8",$s)));	
 }
 
 

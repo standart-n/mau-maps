@@ -4,26 +4,28 @@ function table(&$q) { $s=""; $i=0; $k="";
 	$q->validate->skipForSql($q->url->last);
 	$s.="SELECT SKIP ".$q->url->last." * FROM VW_DISCONNECTION_WEB WHERE (1=1) ";
 	if ($q->validate->direction($q)) { 
-		$s.="AND (DIRECTION='".$q->validate->toWin($q->url->f_direction)."') ";
+		$s.="AND (DIRECTION='".stripslashes($q->validate->toWin($q->url->f_direction))."') ";
 	}
 	if ($q->validate->ctp($q)) { 
-		$s.="AND (CTP='".$q->validate->toWin($q->url->f_ctp)."') ";
+		$s.="AND (CTP='".stripslashes($q->validate->toWin($q->url->f_ctp))."') ";
 	}
 	if ($q->validate->service($q)) { 
-		$s.="AND (SSERVICE='".$q->validate->toWin($q->url->f_service)."') ";
+		$s.="AND (SSERVICE='".stripslashes($q->validate->toWin($q->url->f_service))."') ";
 	}
 	if ($q->validate->sector($q)) { 
-		$s.="AND (SREGION='".$q->validate->toWin($q->url->f_sector)."') ";
+		$s.="AND (SREGION='".stripslashes($q->validate->toWin($q->url->f_sector))."') ";
 	}
 	if ($q->validate->street($q)) { 
-		$s.="AND (STREET='".$q->validate->toWin($q->url->f_street)."') ";
+		$s.="AND (STREET='".stripslashes($q->validate->toWin($q->url->f_street))."') ";
 	}
 	if ($q->validate->home($q)) { 
-		$s.="AND (NOMER='".$q->validate->toWin($q->url->f_home)."') ";
+		$s.="AND (NOMER='".stripslashes($q->validate->toWin($q->url->f_home))."') ";
 	}
 	$s.="ORDER by STREET, SORTEDCAPTION ASC ";
 
+
 	//$q->alert=$k;
+
 	return $s;
 }
 
@@ -38,22 +40,22 @@ function balloon(&$q) { $s="";
 function getList($q,$key) { $s=""; $k="";
 	$s.="SELECT ".$key." FROM VW_DISCONNECTION_WEB WHERE (1=1) ";
 	if ($q->validate->direction($q)) { 
-		$s.="AND (DIRECTION='".$q->validate->toWin($q->url->f_direction)."') ";
+		$s.="AND (DIRECTION='".stripslashes($q->validate->toWin($q->url->f_direction))."') ";
 	}
 	if ($q->validate->ctp($q)) { 
-		$s.="AND (CTP='".$q->validate->toWin($q->url->f_ctp)."') ";
+		$s.="AND (CTP='".stripslashes($q->validate->toWin($q->url->f_ctp))."') ";
 	}
 	if ($q->validate->service($q)) { 
-		$s.="AND (SSERVICE='".$q->validate->toWin($q->url->f_service)."') ";
+		$s.="AND (SSERVICE='".stripslashes($q->validate->toWin($q->url->f_service))."') ";
 	}
 	if ($q->validate->sector($q)) { 
-		$s.="AND (SREGION='".$q->validate->toWin($q->url->f_sector)."') ";
+		$s.="AND (SREGION='".stripslashes($q->validate->toWin($q->url->f_sector))."') ";
 	}
 	if ($q->validate->street($q)) { 
-		$s.="AND (STREET='".$q->validate->toWin($q->url->f_street)."') ";
+		$s.="AND (STREET='".stripslashes($q->validate->toWin($q->url->f_street))."') ";
 	}
 	if ($q->validate->home($q)) { 
-		$s.="AND (NOMER='".$q->validate->toWin($q->url->f_home)."') ";
+		$s.="AND (NOMER='".stripslashes($q->validate->toWin($q->url->f_home))."') ";
 	}
 	$s.="GROUP by ".$key." ";
 	$s.="ORDER by ".$key." ASC ";
@@ -69,22 +71,22 @@ function getTotal($q) { $s=""; $k="";
 	$s.="count(UUID) as COUNT_BUILDINGS ";
 	$s.="FROM VW_DISCONNECTION_WEB WHERE (1=1) ";
 	if ($q->validate->direction($q)) { 
-		$s.="AND (DIRECTION='".$q->validate->toWin($q->url->f_direction)."') ";
+		$s.="AND (DIRECTION='".stripslashes($q->validate->toWin($q->url->f_direction))."') ";
 	}
 	if ($q->validate->ctp($q)) { 
-		$s.="AND (CTP='".$q->validate->toWin($q->url->f_ctp)."') ";
+		$s.="AND (CTP='".stripslashes($q->validate->toWin($q->url->f_ctp))."') ";
 	}
 	if ($q->validate->service($q)) { 
-		$s.="AND (SSERVICE='".$q->validate->toWin($q->url->f_service)."') ";
+		$s.="AND (SSERVICE='".stripslashes($q->validate->toWin($q->url->f_service))."') ";
 	}
 	if ($q->validate->sector($q)) { 
-		$s.="AND (SREGION='".$q->validate->toWin($q->url->f_sector)."') ";
+		$s.="AND (SREGION='".stripslashes($q->validate->toWin($q->url->f_sector))."') ";
 	}
 	if ($q->validate->street($q)) { 
-		$s.="AND (STREET='".$q->validate->toWin($q->url->f_street)."') ";
+		$s.="AND (STREET='".stripslashes($q->validate->toWin($q->url->f_street))."') ";
 	}
 	if ($q->validate->home($q)) { 
-		$s.="AND (NOMER='".$q->validate->toWin($q->url->f_home)."') ";
+		$s.="AND (NOMER='".stripslashes($q->validate->toWin($q->url->f_home))."') ";
 	}
 	
 	return $s;
@@ -97,28 +99,28 @@ function getCross($q,$ln) { $s=""; $k="";
 	$sector=$ln_ms[1];
 	$s.="SELECT count(UUID) as COUNT_ISP, SISPOLNITEL as ISP  FROM VW_DISCONNECTION_WEB WHERE (1=1) ";
 	if ($q->validate->direction($q)) { 
-		$s.="AND (DIRECTION='".$q->validate->toWin($q->url->f_direction)."') ";
+		$s.="AND (DIRECTION='".stripslashes($q->validate->toWin($q->url->f_direction))."') ";
 	}
 	if ($q->validate->ctp($q)) { 
-		$s.="AND (CTP='".$q->validate->toWin($q->url->f_ctp)."') ";
+		$s.="AND (CTP='".stripslashes($q->validate->toWin($q->url->f_ctp))."') ";
 	}
 	if ($q->validate->service($q)) { 
-		$s.="AND (SSERVICE='".$q->validate->toWin($q->url->f_service)."') ";
+		$s.="AND (SSERVICE='".stripslashes($q->validate->toWin($q->url->f_service))."') ";
 	}
 	if ($q->validate->sector($q)) { 
-		$s.="AND (SREGION='".$q->validate->toWin($q->url->f_sector)."') ";
+		$s.="AND (SREGION='".stripslashes($q->validate->toWin($q->url->f_sector))."') ";
 	}
 	if ($q->validate->street($q)) { 
-		$s.="AND (STREET='".$q->validate->toWin($q->url->f_street)."') ";
+		$s.="AND (STREET='".stripslashes($q->validate->toWin($q->url->f_street))."') ";
 	}
 	if ($q->validate->home($q)) { 
-		$s.="AND (NOMER='".$q->validate->toWin($q->url->f_home)."') ";
+		$s.="AND (NOMER='".stripslashes($q->validate->toWin($q->url->f_home))."') ";
 	}
 	if ($service!="Итого") { 
-		$s.="AND (SSERVICE='".$q->validate->toWin($service)."') ";
+		$s.="AND (SSERVICE='".stripslashes($q->validate->toWin($service))."') ";
 	}
 	if ($sector!="Итого") { 
-		$s.="AND (SREGION='".$q->validate->toWin($sector)."') ";
+		$s.="AND (SREGION='".stripslashes($q->validate->toWin($sector))."') ";
 	}
 	$s.="GROUP by SISPOLNITEL ";
 	$s.="ORDER by SISPOLNITEL ASC ";

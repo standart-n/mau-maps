@@ -76,7 +76,9 @@ function on_success(s){
 	$(document).ready(function(){
 		$("div#results").html(""); 
 		$("div#map").html(""); 
-		if (s.alert!="") { alert(s.alert); }
+		//if (console !== "undefined")
+		//if (s.alert!="") { alert(s.alert); }
+		if (s.alert!="") { console.log(s.alert); }
 		$("div#total").html(s.total); 
 		if ($("#var_window").val()=="map") {
 			//myMap.destroy();
@@ -153,7 +155,7 @@ function make_ajax(act,id,type){
 		$.ajax({
 			url:"index.php",
 			cache:false,
-			type:"GET",
+			type:"POST",
 			data:{
 				ajax:true,
 				click:s_id,
@@ -167,9 +169,10 @@ function make_ajax(act,id,type){
 				f_home:s_home_opt[getInd("home")].text
 			},
 			dataType:"json",
-			timeout:10000,
-			beforeSend:function(){ before_send(); },			
+			timeout:100000,
+			beforeSend:function(){ before_send(); /*alert($("#var_window").val())*/ },
 			success:function(s){ 
+				// alert(s);
 				on_success(s);
 				if (type=="down") {
 					height=$(document).height();

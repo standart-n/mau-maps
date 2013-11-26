@@ -27,6 +27,7 @@ function line($q,$r,$i) { $s="";
 
 		
 function lineRow($q,$r,$i) { $s="";
+	//print_r($r);
 	$s.='<div class="content-line" line-id="'.$i.	'">';
 	$s.='<table cellpadding="0" cellspacing="0" border="0" width="100%">';
 	$s.='<tr valign="top">';
