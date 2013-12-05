@@ -29,7 +29,7 @@ function line($q,$r,$i) { $s="";
 function lineRow($q,$r,$i) { $s="";
 	//print_r($r);
 	$s.='<div class="content-line" line-id="'.$i.	'">';
-	$s.='<table cellpadding="0" cellspacing="0" border="0" width="100%">';
+	$s.='<table cellpadding="0" cellspacing="2" border="0" width="100%">';
 	$s.='<tr valign="top">';
 	$s.='<td colspan="2" width="400px">';
 	$s.='<a onclick="on_line(\''.$i.'\');" class="link-line" name="line-'.$i.'" link-id="'.$i.'" open-status="close" ';
@@ -40,8 +40,28 @@ function lineRow($q,$r,$i) { $s="";
 	$s.='<span class="line-sector">('.$r->SREGION.' р-н)</span>';
 	$s.='<span class="line-postindex">'.$r->POSTINDEX.'</span>';
 	$s.='</td>';
-	$s.='<td width="200px">';
-	$s.='<span class="line-service">'.$r->SSERVICE.'</span>';
+	switch ($r->SSERVICE) {
+		case 'Горячая вода':
+			$service_class = "hotwater";
+		break;
+		case 'Холодная вода':
+			$service_class = "coldwater";
+		break;
+		case 'Отопление':
+			$service_class = "heating";
+		break;
+		case 'Лифт':
+			$service_class = "elevator";
+		break;
+		case 'Электроэнергия':
+			$service_class = "electro";
+		break;
+		default:
+			$service_class = "default";
+		break;
+	}
+	$s.='<td class="td-service td-service-'.$service_class.'" width="200px">';
+	$s.='<span class="line-service line-service-'.$service_class.'">'.$r->SSERVICE.'</span>';
 	$s.='</td>';
 	$s.='<td width="200px">';
 	$s.='<span class="line-date">'.$r->DATE_OFF.'</span>';

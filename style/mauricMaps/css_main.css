@@ -533,3 +533,31 @@ margin:0 0 0 360px;
 }
 
 
+
+.line-service {
+	padding: 2px 3px 2px 3px;
+}
+
+.td-service-hotwater .line-service-hotwater {
+	color: #fff;
+	background-color: #be0000;
+}
+
+.td-service-coldwater .line-service-coldwater {
+	color: #fff;
+	background-color: #1073b8;
+}
+
+.td-service-heating .line-service-heating {
+	background-color: #ed641a;
+}
+
+.td-service-elevator .line-service-elevator {
+	color: #fff;
+	background-color: #7b7b7b;
+}
+
+.td-service-electro .line-service-electro {
+	color: #fff;
+	background-color: #b413ae;
+}
