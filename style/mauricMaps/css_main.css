@@ -558,6 +558,9 @@ margin:0 0 0 360px;
 }
 
 .td-service-electro .line-service-electro {
-	color: #fff;
-	background-color: #b413ae;
+	background-color: #f6e026;
+}
+
+.td-service-lowquality .line-service-lowquality {
+	background-color: #e7abab;
 }

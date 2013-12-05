@@ -56,6 +56,9 @@ function lineRow($q,$r,$i) { $s="";
 		case 'Электроэнергия':
 			$service_class = "electro";
 		break;
+		case 'ГВС некачественное предоставление (ухудшены параметры)':
+			$service_class = "lowquality";
+		break;
 		default:
 			$service_class = "default";
 		break;
